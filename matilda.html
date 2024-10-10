@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #ffeb3b, #fff3e0); /* Pastel yellow background with orange stripes */
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        #image {
+            width: 80%; /* Adjust this to change the size of the image */
+            max-width: 300px; /* This will ensure the image is not too big on large screens */
+            border-radius: 10px; /* Add a slight border-radius for a softer look */
+        }
+
+        #message {
+            font-size: 24px;
+        }
+
+        #yesButton {
+            font-size: 24px;
+            background-color: #4caf50; /* Green button color */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Add a border-radius for a rounded button */
+        }
+
+        #noButton {
+            font-size: 24px;
+            background-color: #f44336; /* Red button color */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px; /* Add a border-radius for a rounded button */
+        }
+    </style>
+    <script>
+        let noClickCount = 0;
+        const noMessages = ["Are you sure?", "Really sure?", "Absolutely sure?", "Please reconsider..."];
+
+        function noClick() {
+            document.getElementById('yesButton').style.fontSize = '24px';
+            const noButton = document.getElementById('noButton');
+
+            // Cycle through messages and loop back to the first one if the last message is reached
+            noButton.innerText = noMessages[noClickCount % noMessages.length];
+            noClickCount++;
+        }
+
+        function yesClick() {
+            document.getElementById('image').src = 'yay.jpg'; // replace with your yay image path
+            document.getElementById('message').innerText = 'Yay!';
+            // Reset the font size of the "Yes" button
+            document.getElementById('yesButton').style.fontSize = '24px';
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="valentine.png" alt="Will you be my Valentine?"> <!-- replace with your valentine image path -->
+        <p id="message">Will you be my Valentine?</p>
+        <button id="yesButton" onclick="yesClick()">Yes</button>
+        <button id="noButton" onclick="noClick()">No</button>
+    </div>
+</body>
+</html>
