@@ -50,11 +50,11 @@
         let noClickCount = 0;
         let greenButtonSize = 24; // Initial size of the green button
         let imageSwitched = false; // Flag to check if the image has been switched
-        const noMessages = ["EH EH", "Wrong choice", "maybe reconsider", "Still no?", "Come on..."];
+        const noMessages = ["EH EH", "Wrong choice", "Did you REALLY think it would be this easy?", "Still no?", "Ay ay ay - what am I to do?"];
         
         function noClick() {
             // Adjust the size of the green button
-            greenButtonSize += 10;
+            greenButtonSize += 20;
             document.getElementById('yesButton').style.fontSize = greenButtonSize + 'px';
 
             // Switch image on the first "No" click
@@ -85,8 +85,8 @@
                 
                 // Display the message
                 document.getElementById('message').innerHTML = `<div style="border: 2px solid black; padding: 10px;">
-                    Shasmeen, I know I said I wouldn’t because I’m already doing something for you, but I thought about it a lot. About how you always wanted a rose and have never been with someone on Valentine's. It made me realize you are right. This is our final year of school, and I cannot believe I nearly did not get you the rose. I had this entire thing planned. Remember me scrambling to see the rose on Thursday, that was because you missed mine and I thought you had it. These past few months have been absolutely wonderful. Something I could not even fathom could one day be mine. I am so so so glad I get to have you as my valentine. (Who would have thought 5 months ago – Maaz and Shaz :)<br><br>
-                    <span style="display: block; border-top: 2px solid black; padding-top: 10px;">I Love You</span>
+                    Okay okay all jokes aside I really am not one for receiving stuff from others. BUT just for you I'll make a deal. If you ever see me finding myself in a situation where a smile would help then you can give me something if you like:)<br><br>
+                    <span style="display: block; border-top: 2px solid black; padding-top: 10px;">- Maaz</span> <\ps I spent way to long on this>
                 </div>`;
                 
                 // Show the image and message
@@ -102,8 +102,8 @@
 </head>
 <body>
     <div id="container">
-        <img id="image" src="valentines.png" alt="Will you be my Valentine?"> <!-- replace with your valentine image path -->
-        <p id="message">Will you be my Valentine?</p>
+        <img id="image" src="valentines.jpg" alt="Will you be my Valentine?"> <!-- replace with your valentine image path -->
+        <p id="message">Hear ye, fair Matilda! I humbly beseech thee, bestow upon me naught in return. Dost thou accept mine proposition? (You don't have to give me somehting in return)</p>
         <button id="yesButton" onclick="yesClick()">Yes</button>
         <button id="noButton" onclick="noClick()">No</button>
     </div>
